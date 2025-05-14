@@ -1,48 +1,80 @@
+:root {
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --primary-color: #3498db;
+  --button-bg: linear-gradient(135deg, #3498db, #6dd5fa);
+  --button-hover-bg: linear-gradient(135deg, #2980b9, #58cfff);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme {
+  --bg-color: #1e1e2f;
+  --text-color: #f0f0f0;
+  --card-bg: #2e2e3e;
+  --primary-color: #2980b9;
+  --button-bg: linear-gradient(135deg, #2980b9, #3c8dbc);
+  --button-hover-bg: linear-gradient(135deg, #1c6690, #2c89b8);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  background-color: #f4f4f9;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
-  color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1 {
-  color: #2c3e50;
-  margin-top: 50px;
+  color: var(--text-color);
+  margin-top: 60px;
+  font-size: 36px;
 }
 
 p {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.8;
   margin: 20px auto;
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .container {
-  padding: 20px;
+  padding: 30px 20px;
 }
 
 button {
-  background-color: #3498db;
+  background: var(--button-bg);
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 14px 28px;
   font-size: 16px;
-  border-radius: 5px;
+  font-weight: bold;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 button:hover {
-  background-color: #2980b9;
+  background: var(--button-hover-bg);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px var(--shadow-color);
 }
 
 .card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 500px;
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 550px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px var(--shadow-color);
 }
