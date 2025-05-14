@@ -1,3 +1,5 @@
-function sayHello() {
-  alert("Здравей от Bobi!");
-}
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+  }
+</script>
